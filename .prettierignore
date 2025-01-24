@@ -1,0 +1,5 @@
+# shadcn-ui components
+apps/web/src/components/ui
+
+apps/web/src/hooks/use-mobile.*
+apps/web/src/hooks/use-toast.*
