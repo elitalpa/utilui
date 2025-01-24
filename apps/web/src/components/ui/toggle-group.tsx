@@ -1,3 +1,5 @@
+/* eslint @typescript-eslint/prefer-nullish-coalescing: 0 */
+
 "use client"
 
 import * as React from "react"

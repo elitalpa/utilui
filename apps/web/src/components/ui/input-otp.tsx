@@ -1,3 +1,5 @@
+/* eslint @typescript-eslint/no-unsafe-argument: 0 */
+
 "use client"
 
 import * as React from "react"
