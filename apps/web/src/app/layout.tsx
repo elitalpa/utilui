@@ -24,6 +24,14 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          defer
+          data-domain="utilui.com"
+          data-api="/plausible/api/event"
+          src="/plausible/js/script.js"
+        ></script>
+      </head>
       <body
         className={cn(
           "min-h-screen bg-background font-sans text-foreground antialiased",
