@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button",
+  "type": "registry:component",
+  "title": "Button",
+  "description": "A button component",
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/button/button.tsx",
+      "content": "export function Button() {\n  return <button>{\"Test Button\"}</button>;\n}\n",
+      "type": "registry:component",
+      "target": "components/utilui/button.tsx"
+    }
+  ]
+}

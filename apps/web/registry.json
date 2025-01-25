@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "Util UI",
+  "homepage": "https://utilui.com",
+  "items": [
+    {
+      "name": "button",
+      "type": "registry:component",
+      "title": "Button",
+      "description": "A button component",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/button/button.tsx",
+          "type": "registry:component",
+          "target": "components/utilui/button.tsx"
+        }
+      ]
+    }
+  ]
+}

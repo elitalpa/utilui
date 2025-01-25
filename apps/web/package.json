@@ -14,7 +14,8 @@
     "lint:fix": "next lint --fix",
     "preview": "next build && next start",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "registry:build": "shadcn build"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -66,6 +67,7 @@
     "react-resizable-panels": "^2.1.7",
     "recharts": "^2.15.0",
     "server-only": "^0.0.1",
+    "shadcn": "^2.2.0-canary.1",
     "sonner": "^1.7.2",
     "superjson": "^2.2.2",
     "tailwind-merge": "^2.6.0",
