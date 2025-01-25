@@ -68,6 +68,7 @@
     "recharts": "^2.15.0",
     "server-only": "^0.0.1",
     "shadcn": "^2.2.0-canary.1",
+    "shiki": "^2.1.0",
     "sonner": "^1.7.2",
     "superjson": "^2.2.2",
     "tailwind-merge": "^2.6.0",
@@ -76,6 +77,10 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@content-collections/core": "^0.8.0",
+    "@content-collections/mdx": "^0.2.0",
+    "@content-collections/next": "^0.2.4",
+    "@tailwindcss/typography": "^0.5.16",
     "@types/eslint": "^9.6.1",
     "@types/node": "^22.10.10",
     "@types/react": "^18.3.0",

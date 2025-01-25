@@ -4,8 +4,10 @@
  */
 import "./src/env.js";
 
-/** @type {import("next").NextConfig} */
-const config = {
+import type { NextConfig } from "next";
+import { withContentCollections } from "@content-collections/next";
+
+const nextConfig: NextConfig = {
   /* config options here */
   async rewrites() {
     return [
@@ -21,4 +23,5 @@ const config = {
   },
 };
 
-export default config;
+// withContentCollections must be the outermost plugin
+export default withContentCollections(nextConfig);
