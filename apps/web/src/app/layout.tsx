@@ -17,7 +17,7 @@ const fontSans = FontSans({
 export const metadata: Metadata = {
   title: "Util UI",
   description:
-    "Usefull UI components that can be added directly in your project codebase.",
+    "Usefull UI components that can be added directly in your project codebase. Compatible with shadcn ui and the shadcn cli.",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
