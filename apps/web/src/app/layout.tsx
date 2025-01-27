@@ -7,6 +7,8 @@ import { cn } from "@/lib/utils";
 
 import { TRPCReactProvider } from "@/trpc/react";
 
+import SiteFooter from "@/components/site/site-footer";
+
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -38,7 +40,12 @@ export default function RootLayout({
           fontSans.variable,
         )}
       >
-        <TRPCReactProvider>{children}</TRPCReactProvider>
+        <TRPCReactProvider>
+          <div className="flex flex-1 flex-col">
+            {children}
+            <SiteFooter />
+          </div>
+        </TRPCReactProvider>
       </body>
     </html>
   );
