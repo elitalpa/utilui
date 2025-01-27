@@ -10,7 +10,7 @@ export default function Home() {
         }
       </p>
       <p className="text-center text-lg">
-        {"Compatible with the "}
+        {"Compatible with shadcn ui and the "}
         <a
           href={"https://ui.shadcn.com/docs/cli"}
           className="text-accent-foreground underline-offset-4 hover:underline"
