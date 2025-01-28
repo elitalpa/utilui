@@ -11,7 +11,7 @@ Read the docs : [utilui.com/docs](https://utilui.com/docs).
 
 ## Contributing
 
-[CONTRIBUTING.md](CONTRIBUTING.md) guide coming soon.
+Please read the [CONTRIBUTING.md](CONTRIBUTING.md) guide.
 
 ## License
 
