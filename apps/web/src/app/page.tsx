@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <main className="flex min-h-[calc(100vh-90px)] flex-col items-center justify-center p-4">
+    <main className="flex min-h-[calc(100vh-85px)] flex-col items-center justify-center p-4">
       <h1 className="text-4xl font-semibold tracking-wider">{"Util UI"}</h1>
       <p className="text-center text-lg">
         {

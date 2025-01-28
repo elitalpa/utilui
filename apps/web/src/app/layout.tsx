@@ -8,6 +8,8 @@ import { cn } from "@/lib/utils";
 import { TRPCReactProvider } from "@/trpc/react";
 
 import SiteFooter from "@/components/site/site-footer";
+import SiteHeader from "@/components/site/site-header";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -25,7 +27,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <script
           defer
@@ -41,10 +43,18 @@ export default function RootLayout({
         )}
       >
         <TRPCReactProvider>
-          <div className="flex flex-1 flex-col">
-            {children}
-            <SiteFooter />
-          </div>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <div className="flex flex-1 flex-col">
+              <SiteHeader />
+              {children}
+              <SiteFooter />
+            </div>
+          </ThemeProvider>
         </TRPCReactProvider>
       </body>
     </html>

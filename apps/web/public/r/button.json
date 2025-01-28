@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "src/registry/button/button.tsx",
-      "content": "export function Button() {\n  return <button>{\"Test Button\"}</button>;\n}\n",
+      "content": "import { cn } from \"@/lib/utils\";\nimport * as React from \"react\";\n\nconst Button = React.forwardRef<\n  HTMLButtonElement,\n  React.ButtonHTMLAttributes<HTMLButtonElement>\n>(({ className, ...props }, ref) => {\n  return (\n    <button\n      className={cn(\"rounded-md border px-4 py-2\", { className })}\n      ref={ref}\n      {...props}\n    />\n  );\n});\nButton.displayName = \"Button\";\n\nexport { Button };\n",
       "type": "registry:component",
       "target": "components/utilui/button.tsx"
     }
