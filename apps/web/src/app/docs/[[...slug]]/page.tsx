@@ -36,8 +36,7 @@ export async function generateMetadata({
 
   return {
     title: `${doc.title} - Util UI`,
-    description: `${doc.title}`,
-    icons: [{ rel: "icon", url: "/favicon.ico" }],
+    description: `${doc.description}`,
   };
 }
 
