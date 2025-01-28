@@ -10,6 +10,7 @@ import { TRPCReactProvider } from "@/trpc/react";
 import SiteFooter from "@/components/site/site-footer";
 import SiteHeader from "@/components/site/site-header";
 import { ThemeProvider } from "@/components/theme-provider";
+import { siteConfig } from "@/config/site";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -20,6 +21,25 @@ export const metadata: Metadata = {
   title: "Util UI",
   description:
     "Usefull UI components that can be added directly in your project codebase. Compatible with shadcn ui and the shadcn cli.",
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+  },
+  keywords: [
+    "ui",
+    "Components",
+    "code",
+    "codebase",
+    "registry",
+    "shadcn",
+    "cli",
+  ],
+  // for opengraph image
+  metadataBase: new URL(siteConfig.baseUrl),
+  openGraph: {
+    images: "/opengraph-image.png",
+  },
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
