@@ -1,1 +1,1 @@
-export const siteConfig = { baseUrl: "https://utilui.com/" };
+export const siteConfig = { baseUrl: "https://utilui.com" };
