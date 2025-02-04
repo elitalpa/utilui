@@ -5,6 +5,7 @@ import { MDXContent } from "@content-collections/mdx/react";
 import { Button } from "@/registry/components/button";
 import ComponentPreview from "@/components/site/component-preview";
 import { type Metadata } from "next";
+import CodeBlock from "@/components/mdx/code-block";
 
 async function findDoc({
   params,
@@ -54,7 +55,14 @@ export default async function Docs({
 
   return (
     <main className="container mx-auto">
-      <MDXContent components={{ Button, ComponentPreview }} code={doc.mdx} />
+      <MDXContent
+        components={{
+          Button,
+          ComponentPreview,
+          code: CodeBlock,
+        }}
+        code={doc.mdx}
+      />
     </main>
   );
 }
