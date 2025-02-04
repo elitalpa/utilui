@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-variants-demo",
+  "type": "registry:block",
+  "title": "Button Demo",
+  "description": "Demo of the Button component variants",
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/blocks/button-variants-demo.tsx",
+      "content": "import { Button } from \"@/components/utilui/button\";\r\n\r\nexport default function ButtonVariantsDemo() {\r\n  return (\r\n    <div className=\"flex flex-col gap-3\">\r\n      <Button>Default Button</Button>\r\n      <Button variant={\"secondary\"}>Secondary Button</Button>\r\n      <Button variant={\"destructive\"}>Destructive Button</Button>\r\n      <Button variant={\"validate\"}>Validate button</Button>\r\n      <Button variant={\"outline\"}>Outline button</Button>\r\n      <Button variant={\"ghost\"}>Ghost button</Button>\r\n      <Button variant={\"link\"}>Link button</Button>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:block",
+      "target": "components/utilui/button-variants-demo.tsx"
+    }
+  ]
+}

@@ -11,9 +11,37 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/button/button.tsx",
+          "path": "src/registry/components/button.tsx",
           "type": "registry:component",
           "target": "components/utilui/button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button-demo",
+      "type": "registry:block",
+      "title": "Button Demo",
+      "description": "Demo of the Button component",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/blocks/button-demo.tsx",
+          "type": "registry:block",
+          "target": "components/utilui/button-demo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button-variants-demo",
+      "type": "registry:block",
+      "title": "Button Demo",
+      "description": "Demo of the Button component variants",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/blocks/button-variants-demo.tsx",
+          "type": "registry:block",
+          "target": "components/utilui/button-variants-demo.tsx"
         }
       ]
     }
