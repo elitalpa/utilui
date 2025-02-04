@@ -6,10 +6,10 @@ export default function ButtonVariantsDemo() {
       <Button>Default Button</Button>
       <Button variant={"secondary"}>Secondary Button</Button>
       <Button variant={"destructive"}>Destructive Button</Button>
-      <Button variant={"validate"}>Validate button</Button>
-      <Button variant={"outline"}>Outline button</Button>
-      <Button variant={"ghost"}>Ghost button</Button>
-      <Button variant={"link"}>Link button</Button>
+      <Button variant={"valid"}>Valid Button</Button>
+      <Button variant={"outline"}>Outline Button</Button>
+      <Button variant={"ghost"}>Ghost Button</Button>
+      <Button variant={"link"}>Link Button</Button>
     </div>
   );
 }
