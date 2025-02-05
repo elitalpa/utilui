@@ -30,6 +30,16 @@ const CodeBlock = ({
         ? children.join("")
         : String(children || "");
 
+  // Handle inline code
+  const isInline = !className;
+  if (isInline) {
+    return (
+      <span className="rounded-md bg-foreground px-1 py-0.5 text-sm text-background">
+        {codeString}
+      </span>
+    );
+  }
+
   const language = className?.replace("language-", "") || "";
   const code = codeString.trim();
   const highlightedCodePromise = highlightMarkdownCode(code, language);
