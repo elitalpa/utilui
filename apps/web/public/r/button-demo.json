@@ -4,11 +4,13 @@
   "type": "registry:block",
   "title": "Button Demo",
   "description": "Demo of the Button component",
-  "registryDependencies": [],
+  "registryDependencies": [
+    "button"
+  ],
   "files": [
     {
       "path": "src/registry/blocks/button-demo.tsx",
-      "content": "import { Button } from \"@/components/utilui/button\";\r\n\r\nexport default function ButtonDemo() {\r\n  return <Button variant=\"valid\">Valid Button</Button>;\r\n}\r\n",
+      "content": "import { Button } from \"@/components/utilui/button\";\n\nexport default function ButtonDemo() {\n  return <Button variant=\"valid\">Valid Button</Button>;\n}\n",
       "type": "registry:block",
       "target": "components/utilui/button-demo.tsx"
     }

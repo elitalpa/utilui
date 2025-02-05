@@ -4,11 +4,13 @@
   "type": "registry:block",
   "title": "Button Demo",
   "description": "Demo of the Button component variants",
-  "registryDependencies": [],
+  "registryDependencies": [
+    "button"
+  ],
   "files": [
     {
       "path": "src/registry/blocks/button-variants-demo.tsx",
-      "content": "import { Button } from \"@/components/utilui/button\";\r\n\r\nexport default function ButtonVariantsDemo() {\r\n  return (\r\n    <div className=\"flex flex-col gap-3\">\r\n      <Button>Default Button</Button>\r\n      <Button variant={\"secondary\"}>Secondary Button</Button>\r\n      <Button variant={\"destructive\"}>Destructive Button</Button>\r\n      <Button variant={\"valid\"}>Valid Button</Button>\r\n      <Button variant={\"outline\"}>Outline Button</Button>\r\n      <Button variant={\"ghost\"}>Ghost Button</Button>\r\n      <Button variant={\"link\"}>Link Button</Button>\r\n    </div>\r\n  );\r\n}\r\n",
+      "content": "import { Button } from \"@/components/utilui/button\";\n\nexport default function ButtonVariantsDemo() {\n  return (\n    <div className=\"flex flex-col gap-3\">\n      <Button>Default Button</Button>\n      <Button variant={\"secondary\"}>Secondary Button</Button>\n      <Button variant={\"destructive\"}>Destructive Button</Button>\n      <Button variant={\"warning\"}>Warning Button</Button>\n      <Button variant={\"valid\"}>Valid Button</Button>\n      <Button variant={\"info\"}>Info Button</Button>\n      <Button variant={\"outline\"}>Outline Button</Button>\n      <Button variant={\"ghost\"}>Ghost Button</Button>\n      <Button variant={\"link\"}>Link Button</Button>\n    </div>\n  );\n}\n",
       "type": "registry:block",
       "target": "components/utilui/button-variants-demo.tsx"
     }

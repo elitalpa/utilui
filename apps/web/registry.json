@@ -15,14 +15,54 @@
           "type": "registry:component",
           "target": "components/utilui/button.tsx"
         }
-      ]
+      ],
+      "tailwind": {
+        "config": {
+          "theme": {
+            "extend": {
+              "colors": {
+                "valid": {
+                  "DEFAULT": "hsl(var(--valid))",
+                  "foreground": "hsl(var(--valid-foreground))"
+                },
+                "warning": {
+                  "DEFAULT": "hsl(var(--warning))",
+                  "foreground": "hsl(var(--warning-foreground))"
+                },
+                "info": {
+                  "DEFAULT": "hsl(var(--info))",
+                  "foreground": "hsl(var(--info-foreground))"
+                }
+              }
+            }
+          }
+        }
+      },
+      "cssVars": {
+        "light": {
+          "valid": "142.1 70.6% 45.3%",
+          "valid-foreground": "0 0% 100%",
+          "warning": "24.6 95% 53.1%",
+          "warning-foreground": "0 0% 100%",
+          "info": "217.2 91.2% 59.8%",
+          "info-foreground": "0 0% 100%"
+        },
+        "dark": {
+          "valid": "142.1 76.2% 36.3%",
+          "valid-foreground": "0 0% 100%",
+          "warning": "20.5 90.2% 48.2%",
+          "warning-foreground": "0 0% 100%",
+          "info": "221.2 83.2% 53.3%",
+          "info-foreground": "0 0% 100%"
+        }
+      }
     },
     {
       "name": "button-demo",
       "type": "registry:block",
       "title": "Button Demo",
       "description": "Demo of the Button component",
-      "registryDependencies": [],
+      "registryDependencies": ["button"],
       "files": [
         {
           "path": "src/registry/blocks/button-demo.tsx",
@@ -36,7 +76,7 @@
       "type": "registry:block",
       "title": "Button Demo",
       "description": "Demo of the Button component variants",
-      "registryDependencies": [],
+      "registryDependencies": ["button"],
       "files": [
         {
           "path": "src/registry/blocks/button-variants-demo.tsx",
