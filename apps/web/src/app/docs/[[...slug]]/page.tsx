@@ -3,9 +3,11 @@ import { notFound } from "next/navigation";
 
 import { MDXContent } from "@content-collections/mdx/react";
 import { Button } from "@/registry/components/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ComponentPreview from "@/components/site/component-preview";
 import { type Metadata } from "next";
 import CodeBlock from "@/components/mdx/code-block";
+import ComponentCodeBlock from "@/components/site/component-code-block";
 
 async function findDoc({
   params,
@@ -58,7 +60,12 @@ export default async function Docs({
       <MDXContent
         components={{
           Button,
+          Tabs,
+          TabsContent,
+          TabsList,
+          TabsTrigger,
           ComponentPreview,
+          ComponentCodeBlock,
           code: CodeBlock,
         }}
         code={doc.mdx}
