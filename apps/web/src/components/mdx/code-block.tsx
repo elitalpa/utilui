@@ -1,5 +1,6 @@
 import * as React from "react";
 import { codeToHtml } from "shiki";
+import { CopyButton } from "@/components/site/copy-button";
 
 async function highlightMarkdownCode(code: string, language: string) {
   const html = await codeToHtml(code, {
@@ -46,15 +47,16 @@ const CodeBlock = ({
   const highlightedCode = React.use(highlightedCodePromise);
 
   return (
-    <div
-      className="not-prose mb-6 mt-4 rounded-md px-4 py-3"
+    <pre
+      className="not-prose relative mb-6 mt-4 rounded-md px-4 py-3"
       style={{ backgroundColor: "#0d1117" }}
     >
+      <CopyButton code={code} />
       <code
         dangerouslySetInnerHTML={{ __html: highlightedCode }}
         className="block overflow-auto"
       />
-    </div>
+    </pre>
   );
 };
 

@@ -4,6 +4,7 @@ import { codeToHtml } from "shiki";
 import { promises as fs } from "fs";
 import dynamic from "next/dynamic";
 import registry from "@/../registry.json";
+import { CopyButton } from "@/components/site/copy-button";
 
 // Indexing import paths
 const Index = Object.fromEntries(
@@ -55,14 +56,9 @@ async function highlightCode(code: string) {
   });
 }
 
-async function getHighlightedCode(name: string) {
-  const code = await getCodeFromFile(name);
-  return await highlightCode(code);
-}
-
 export default function ComponentPreview({ name }: { name: string }) {
-  const highlightedCodePromise = getHighlightedCode(name);
-  const highlightedCode = use(highlightedCodePromise);
+  const code = use(getCodeFromFile(name));
+  const highlightedCode = use(highlightCode(code));
 
   const DynamicComponent = Index[name];
 
@@ -76,7 +72,8 @@ export default function ComponentPreview({ name }: { name: string }) {
         <TabsTrigger value="preview">Preview</TabsTrigger>
         <TabsTrigger value="code">Code</TabsTrigger>
       </TabsList>
-      <TabsContent value="preview">
+      <TabsContent value="preview" className="relative">
+        <CopyButton code={code} />
         <div className="flex min-h-[450px] items-center justify-center rounded-md border px-4 py-3">
           <Suspense
             fallback={
@@ -89,7 +86,8 @@ export default function ComponentPreview({ name }: { name: string }) {
           </Suspense>
         </div>
       </TabsContent>
-      <TabsContent value="code">
+      <TabsContent value="code" className="relative">
+        <CopyButton code={code} />
         <div
           className="not-prose max-h-[450px] overflow-auto rounded-md px-4 py-3"
           style={{ backgroundColor: "#0d1117" }}

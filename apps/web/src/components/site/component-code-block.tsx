@@ -2,6 +2,7 @@ import React, { use } from "react";
 import { codeToHtml } from "shiki";
 import { promises as fs } from "fs";
 import registry from "@/../registry.json";
+import { CopyButton } from "@/components/site/copy-button";
 
 async function getCodeFromFile(name: string) {
   try {
@@ -39,20 +40,18 @@ async function highlightCode(code: string) {
   });
 }
 
-async function getHighlightedCode(name: string) {
-  const code = await getCodeFromFile(name);
-  return await highlightCode(code);
-}
-
 export default function ComponentCodeBlock({ name }: { name: string }) {
-  const highlightedCodePromise = getHighlightedCode(name);
-  const highlightedCode = use(highlightedCodePromise);
+  const code = use(getCodeFromFile(name));
+  const highlightedCode = use(highlightCode(code));
 
   return (
-    <div
-      className="not-prose max-h-[450px] overflow-auto rounded-md px-4 py-3"
-      style={{ backgroundColor: "#0d1117" }}
-      dangerouslySetInnerHTML={{ __html: highlightedCode }}
-    />
+    <div className="relative">
+      <CopyButton code={code} />
+      <div
+        className="not-prose max-h-[450px] overflow-auto rounded-md px-4 py-3"
+        style={{ backgroundColor: "#0d1117" }}
+        dangerouslySetInnerHTML={{ __html: highlightedCode }}
+      />
+    </div>
   );
 }
