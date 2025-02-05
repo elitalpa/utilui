@@ -6,7 +6,7 @@ export default function SiteFooter() {
           <p className="text-sm text-muted-foreground">
             {"Built by "}
             <a
-              href="https://x.com/elitalpa"
+              href="https://eli-talpa.com"
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium underline underline-offset-4 hover:text-foreground"
