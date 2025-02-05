@@ -91,7 +91,8 @@ export default function ComponentPreview({ name }: { name: string }) {
       </TabsContent>
       <TabsContent value="code">
         <div
-          className="max-h-[450px] overflow-auto rounded-lg"
+          className="not-prose max-h-[450px] overflow-auto rounded-lg p-4"
+          style={{ backgroundColor: "#0d1117" }}
           dangerouslySetInnerHTML={{ __html: highlightedCode }}
         />
       </TabsContent>
