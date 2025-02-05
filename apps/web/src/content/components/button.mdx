@@ -11,19 +11,118 @@ description: A resuable button component.
 
 ## Usage
 
-```jsx
+```tsx
 import { Button } from "@/components/utilui/button";
 ```
 
-```jsx
+```tsx
 <Button variant="default">Button</Button>
+```
+
+### What if it's not a button ?
+
+If you want to apply one of the Button styles but with another html tag, you can do it like this for an `<a>` (anchor) tag :
+
+```tsx
+import { buttonVariants } from "@/components/ui/button";
+```
+
+```tsx
+<a href="#" className={buttonVariants({ variant: "link" })}>
+  Click here
+</a>
+```
+
+or for Next's `<Link>` component :
+
+```tsx
+import Link from "next/link";
+import { buttonVariants } from "@/components/ui/button";
+```
+
+```tsx
+<Link href="#" className={buttonVariants({ variant: "link" })}>
+  Click here
+</Link>
 ```
 
 ## Installation
 
+<Tabs defaultValue="cli">
+  
+<TabsList>
+
+<TabsTrigger value="cli">CLI</TabsTrigger>
+
+<TabsTrigger value="manual">Manual</TabsTrigger>
+
+</TabsList>
+
+<TabsContent value="cli">
+
 ```sh
 npx shadcn@latest add https://utilui.com/r/button.json
 ```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+1. Copy and paste the following code into a file like **button.tsx** :
+
+<ComponentCodeBlock name="button" />
+
+2. Add the following vars in your **css** file (if it's not already added) :
+
+```css
+@layer base {
+  :root {
+    --valid: 142.1 70.6% 45.3%;
+    --valid-foreground: 0 0% 100%;
+    --warning: 24.6 95% 53.1%;
+    --warning-foreground: 0 0% 100%;
+    --info: 217.2 91.2% 59.8%;
+    --info-foreground: 0 0% 100%;
+  }
+  .dark {
+    --valid: 142.1 76.2% 36.3%;
+    --valid-foreground: 0 0% 100%;
+    --warning: 20.5 90.2% 48.2%;
+    --warning-foreground: 0 0% 100%;
+    --info: 221.2 83.2% 53.3%;
+    --info-foreground: 0 0% 100%;
+  }
+}
+```
+
+3. Add the following to your **tailwind.config.ts** (if it's not already added) :
+
+```ts
+export default {
+  theme: {
+    extend: {
+      colors: {
+        valid: {
+          DEFAULT: "hsl(var(--valid))",
+          foreground: "hsl(var(--valid-foreground))",
+        },
+        warning: {
+          DEFAULT: "hsl(var(--warning))",
+          foreground: "hsl(var(--warning-foreground))",
+        },
+        info: {
+          DEFAULT: "hsl(var(--info))",
+          foreground: "hsl(var(--info-foreground))",
+        },
+      },
+    },
+  },
+};
+```
+
+</TabsContent>
+
+</Tabs>
 
 ## Examples
 
