@@ -98,14 +98,17 @@
 
   body::-webkit-scrollbar {
     width: 5px;
+    height: 5px;
   }
 
   ::-webkit-scrollbar {
     width: 0px;
+    height: 0px;
   }
 
   :hover::-webkit-scrollbar {
     width: 5px;
+    height: 5px;
   }
 
   ::-webkit-scrollbar-track {
