@@ -77,7 +77,7 @@ export default function ComponentPreview({ name }: { name: string }) {
         <TabsTrigger value="code">Code</TabsTrigger>
       </TabsList>
       <TabsContent value="preview">
-        <div className="flex min-h-[450px] items-center justify-center rounded-lg border p-4">
+        <div className="flex min-h-[450px] items-center justify-center rounded-md border px-4 py-3">
           <Suspense
             fallback={
               <div className="flex items-center justify-center text-sm text-muted-foreground">
@@ -91,7 +91,7 @@ export default function ComponentPreview({ name }: { name: string }) {
       </TabsContent>
       <TabsContent value="code">
         <div
-          className="not-prose max-h-[450px] overflow-auto rounded-lg p-4"
+          className="not-prose max-h-[450px] overflow-auto rounded-md px-4 py-3"
           style={{ backgroundColor: "#0d1117" }}
           dangerouslySetInnerHTML={{ __html: highlightedCode }}
         />

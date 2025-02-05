@@ -50,7 +50,7 @@ export default function ComponentCodeBlock({ name }: { name: string }) {
 
   return (
     <div
-      className="not-prose max-h-[450px] overflow-auto rounded-lg p-4"
+      className="not-prose max-h-[450px] overflow-auto rounded-md px-4 py-3"
       style={{ backgroundColor: "#0d1117" }}
       dangerouslySetInnerHTML={{ __html: highlightedCode }}
     />

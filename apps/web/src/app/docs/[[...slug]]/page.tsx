@@ -67,6 +67,7 @@ export default async function Docs({
           ComponentPreview,
           ComponentCodeBlock,
           code: CodeBlock,
+          pre: ({ children }) => <div>{children}</div>,
         }}
         code={doc.mdx}
       />

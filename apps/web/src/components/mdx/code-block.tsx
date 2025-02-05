@@ -46,10 +46,15 @@ const CodeBlock = ({
   const highlightedCode = React.use(highlightedCodePromise);
 
   return (
-    <code
-      dangerouslySetInnerHTML={{ __html: highlightedCode }}
-      className="block overflow-auto"
-    />
+    <div
+      className="not-prose mb-6 mt-4 rounded-md px-4 py-3"
+      style={{ backgroundColor: "#0d1117" }}
+    >
+      <code
+        dangerouslySetInnerHTML={{ __html: highlightedCode }}
+        className="block overflow-auto"
+      />
+    </div>
   );
 };
 
