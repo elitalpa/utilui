@@ -93,6 +93,31 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* custom scrollbar styling */
+
+  body::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  :hover::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: transparent;
+    margin: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: hsl(var(--border));
+  }
 }
 
 @layer utilities {
