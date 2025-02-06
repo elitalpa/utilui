@@ -1,4 +1,4 @@
-import React, { use, Suspense } from "react";
+import * as React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { codeToHtml } from "shiki";
 import { promises as fs } from "fs";
@@ -57,8 +57,8 @@ async function highlightCode(code: string) {
 }
 
 export default function ComponentPreview({ name }: { name: string }) {
-  const code = use(getCodeFromFile(name));
-  const highlightedCode = use(highlightCode(code));
+  const code = React.use(getCodeFromFile(name));
+  const highlightedCode = React.use(highlightCode(code));
 
   const DynamicComponent = Index[name];
 
@@ -75,7 +75,7 @@ export default function ComponentPreview({ name }: { name: string }) {
       <TabsContent value="preview" className="relative">
         <CopyButton code={code} />
         <div className="flex min-h-[450px] items-center justify-center rounded-md border px-4 py-3">
-          <Suspense
+          <React.Suspense
             fallback={
               <div className="flex items-center justify-center text-sm text-muted-foreground">
                 Loading component...
@@ -83,7 +83,7 @@ export default function ComponentPreview({ name }: { name: string }) {
             }
           >
             <DynamicComponent />
-          </Suspense>
+          </React.Suspense>
         </div>
       </TabsContent>
       <TabsContent value="code" className="relative">

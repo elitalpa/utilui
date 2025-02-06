@@ -1,4 +1,4 @@
-import React, { use } from "react";
+import * as React from "react";
 import { codeToHtml } from "shiki";
 import { promises as fs } from "fs";
 import registry from "@/../registry.json";
@@ -41,8 +41,8 @@ async function highlightCode(code: string) {
 }
 
 export default function ComponentCodeBlock({ name }: { name: string }) {
-  const code = use(getCodeFromFile(name));
-  const highlightedCode = use(highlightCode(code));
+  const code = React.use(getCodeFromFile(name));
+  const highlightedCode = React.use(highlightCode(code));
 
   return (
     <div className="relative">
