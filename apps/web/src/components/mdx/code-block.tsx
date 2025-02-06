@@ -1,6 +1,8 @@
 import * as React from "react";
 import { codeToHtml } from "shiki";
 import { CopyButton } from "@/components/site/copy-button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { cn } from "@/lib/utils";
 
 async function highlightMarkdownCode(code: string, language: string) {
   const html = await codeToHtml(code, {
@@ -43,21 +45,87 @@ const CodeBlock = ({
 
   const language = className?.replace("language-", "") || "";
   const code = codeString.trim();
-  const highlightedCodePromise = highlightMarkdownCode(code, language);
-  const highlightedCode = React.use(highlightedCodePromise);
 
-  return (
-    <pre
-      className="not-prose relative mb-6 mt-4 rounded-md px-4 py-3"
-      style={{ backgroundColor: "#0d1117" }}
-    >
-      <CopyButton code={code} />
-      <code
-        dangerouslySetInnerHTML={{ __html: highlightedCode }}
-        className="block overflow-auto"
-      />
-    </pre>
-  );
+  const CoreCodeBlock = ({
+    className,
+    updatedCode,
+  }: {
+    updatedCode: string;
+    className?: string;
+  }) => {
+    const highlightedCodePromise = highlightMarkdownCode(updatedCode, language);
+    const highlightedCode = React.use(highlightedCodePromise);
+
+    return (
+      <pre
+        className={cn("not-prose relative rounded-md px-4 py-3", className)}
+        style={{ backgroundColor: "#0d1117" }}
+      >
+        <CopyButton code={updatedCode} />
+        <code
+          dangerouslySetInnerHTML={{ __html: highlightedCode }}
+          className="block overflow-auto"
+        />
+      </pre>
+    );
+  };
+
+  const startsWithNpx = code.startsWith("npx");
+
+  if (startsWithNpx) {
+    const npmCode = code.replace("npx", "npx");
+    const yarnCode = code.replace("npx", "npx");
+    const bunCode = code.replace("npx", "bunx --bun");
+    const pnpmCode = code.replace("npx", "pnpm dlx");
+
+    return (
+      <Tabs
+        defaultValue="npm"
+        className="not-prose mb-0 flex flex-col rounded-md bg-[#161b22]"
+      >
+        <TabsList className="w-fit rounded-md border border-none bg-[#161b22]">
+          <TabsTrigger
+            value="npm"
+            className="rounded text-sm font-medium data-[state=active]:bg-muted"
+          >
+            npm
+          </TabsTrigger>
+          <TabsTrigger
+            value="bun"
+            className="rounded text-sm font-medium data-[state=active]:bg-muted"
+          >
+            bun
+          </TabsTrigger>
+          <TabsTrigger
+            value="yarn"
+            className="rounded text-sm font-medium data-[state=active]:bg-muted"
+          >
+            yarn
+          </TabsTrigger>
+          <TabsTrigger
+            value="pnpm"
+            className="rounded text-sm font-medium data-[state=active]:bg-muted"
+          >
+            pnpm
+          </TabsTrigger>
+        </TabsList>
+        <TabsContent value="npm" className="m-0">
+          <CoreCodeBlock updatedCode={npmCode} />
+        </TabsContent>
+        <TabsContent value="bun" className="m-0">
+          <CoreCodeBlock updatedCode={bunCode} />
+        </TabsContent>
+        <TabsContent value="yarn" className="m-0">
+          <CoreCodeBlock updatedCode={yarnCode} />
+        </TabsContent>
+        <TabsContent value="pnpm" className="m-0">
+          <CoreCodeBlock updatedCode={pnpmCode} />
+        </TabsContent>
+      </Tabs>
+    );
+  }
+
+  return <CoreCodeBlock updatedCode={code} className="mb-6 mt-4" />;
 };
 
 export default CodeBlock;
