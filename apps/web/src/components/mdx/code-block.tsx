@@ -84,28 +84,16 @@ const CodeBlock = ({
         className="not-prose mb-0 flex flex-col rounded-md bg-[#161b22]"
       >
         <TabsList className="w-fit rounded-md border border-none bg-[#161b22]">
-          <TabsTrigger
-            value="npm"
-            className="rounded text-sm font-medium data-[state=active]:bg-muted"
-          >
+          <TabsTrigger value="npm" className="rounded text-sm font-medium">
             npm
           </TabsTrigger>
-          <TabsTrigger
-            value="bun"
-            className="rounded text-sm font-medium data-[state=active]:bg-muted"
-          >
+          <TabsTrigger value="bun" className="rounded text-sm font-medium">
             bun
           </TabsTrigger>
-          <TabsTrigger
-            value="yarn"
-            className="rounded text-sm font-medium data-[state=active]:bg-muted"
-          >
+          <TabsTrigger value="yarn" className="rounded text-sm font-medium">
             yarn
           </TabsTrigger>
-          <TabsTrigger
-            value="pnpm"
-            className="rounded text-sm font-medium data-[state=active]:bg-muted"
-          >
+          <TabsTrigger value="pnpm" className="rounded text-sm font-medium">
             pnpm
           </TabsTrigger>
         </TabsList>
