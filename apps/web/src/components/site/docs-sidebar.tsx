@@ -49,7 +49,7 @@ function DocsNavItems({
             >
               {item.title}
               {item.label && (
-                <span className="ml-2 rounded-md bg-emerald-500 px-1.5 py-0.5 text-xs leading-none text-white no-underline group-hover:no-underline">
+                <span className="ml-2 rounded-md bg-valid px-1.5 py-0.5 text-xs leading-none text-valid-foreground no-underline group-hover:no-underline">
                   {item.label}
                 </span>
               )}
